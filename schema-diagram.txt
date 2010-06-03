@@ -1,0 +1,102 @@
+workspace:
+    pk:name
+
+global-settings:
+    pk:fk:workspace
+    pk:key
+    value
+
+project:
+    pk:name
+    fk:workspace
+
+local-settings:
+    pk:fk:project
+    pk:key
+    value
+
+todo:
+    pk:name
+    fk:project
+    null:priority
+    auto:creation_date
+    auto:start_date
+    auto:completion_date
+    null:deadline
+
+todo-comment:
+    pk:id
+    fk:todo
+    fk:actor
+    posted_date
+    comment
+
+todo-dependency:
+    pk:fk:todo (todo)
+    pk:fk:todo (depends_on)
+
+todo-category:
+    pk:name
+
+todo-has-category:
+    pk:fk:todo
+    pk:fk:todo-category
+
+todo-category-group:
+    pk:name
+
+todo-category-has-group:
+    pk:fk:todo-category
+    pk:fk:todo-category-group
+
+task:
+    pk:name
+    pk:fk:todo
+    null:difficulty
+    null:time_estimate
+    started
+    auto:start_date
+    completed
+    auto:completion_date
+
+task-comment:
+    pk:id
+    fk:task
+    fk:actor
+    posted_date
+    comment
+
+task-tag:
+    pk:name
+
+task-has-tag:
+    pk:fk:task
+    pk:fk:task-tag
+
+task-tag-group:
+    pk:name
+
+task-tag-has-group:
+    pk:fk:task-tag
+    pk:fk:task-tag-group
+
+actor:
+    pk:name
+
+actor-tag:
+    pk:name
+
+actor-has-tag:
+    pk:fk:actor
+    pk:fk:actor-tag
+
+actor-tag-group:
+    pk:name
+
+actor-tag-has-group:
+    pk:fk:actor-tag
+    pk:fk:actor-tag-group
+
+actor-has-task:
+    pk:fk:actor
+    pk:fk:task
