@@ -37,6 +37,7 @@ todo-dependency:
 
 todo-category:
     pk:name
+    null:fk:todo-category (parent)
 
 todo-has-category:
     pk:fk:todo
