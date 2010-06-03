@@ -1,0 +1,6 @@
+*.py[co]
+*.swp
+*~
+\#*#
+Thumbs.db
+local_settings.py
