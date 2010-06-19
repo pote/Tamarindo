@@ -2,5 +2,5 @@
 *.swp
 *~
 \#*#
-Thumbs.db
+*.db
 local_settings.py
