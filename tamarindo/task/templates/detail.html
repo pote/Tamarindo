@@ -1,0 +1,11 @@
+<h1>{{ task.name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+<ul>
+	<li>Task: {{task.name}} </li>
+	<li>Description: {{task.description}}</li>
+	<li>Completed: {{task.completed}} </li>
+</ul>
+ 
