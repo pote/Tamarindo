@@ -1,7 +1,14 @@
+<h1>Complete Task List</h1>
+
 {% if task_list %}
     <ul>
     {% for task in task_list %}
-        <li><a href="/task/{{ task.id }}/">{{ task.name }} - {{ task.description}}</a></li>
+	<li>
+        <ul>
+			<li>Name: <a href="/task/{{ task.id }}/">{{ task.name }}</a></li>
+			<li>Description: {{ task.description}}</a></li>
+		</ul>
+	</li>
     {% endfor %}
     </ul>
 {% else %}

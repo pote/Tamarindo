@@ -5,3 +5,6 @@ class Task (models.Model):
     description = models.TextField()
     completed = models.BooleanField()
 
+
+    def __unicode__(self):
+        return self.name
