@@ -8,6 +8,8 @@
 	<li>Description: {{main_task.description}}</li>
 	<li>Completed: {{main_task.completed}} </li>
 	
+	<a href="/admin/task/task/add/"> Create a New Task </a>
+	
 	{% if main_task.parent %}
 	<h3>Parent Task:</h3>
     	<ul>
@@ -23,8 +25,9 @@
 		<h3>This Task has no Parent Tasks</h3>
 	{% endif %}
 	
+	
 	{% if child_tasks %}
-	<h3>This Task requires the completion of the following tasks to be marked as "complete":</h3>
+	<h3>Child Tasks:</h3>
 	    <ul>
 	    	{% for task in child_tasks %}
 				<li>

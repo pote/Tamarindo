@@ -10,8 +10,7 @@ def index(request):
 
 def detail(request, task_id):
     main_task = get_object_or_404(Task, pk=task_id)
-    child_tasks = []
-    for task in Task.objects.all():
-        if task.parent == main_task:
-            child_tasks.append(task)
+    child_tasks = [] # is this necessary? 
+    child_tasks = Task.objects.filter(parent=main_task)
     return render_to_response('detail.html', {'main_task': main_task, 'child_tasks': child_tasks})
+    
