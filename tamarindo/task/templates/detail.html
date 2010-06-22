@@ -7,6 +7,9 @@
 	<li>Task: {{main_task.name}} </li>
 	<li>Description: {{main_task.description}}</li>
 	<li>Completed: {{main_task.completed}} </li>
+	{% if main_task.deadline %} 
+		<li>Deadline: {{ main_task.deadline }}</li> 
+	{% endif %}
 	
 	<a href="/admin/task/task/add/"> Create a New Task </a>
 	
