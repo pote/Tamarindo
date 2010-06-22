@@ -1,11 +1,28 @@
-<h1>{{ task.name }}</h1>
+<h1>{{ main_task.name }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 
 <ul>
-	<li>Task: {{task.name}} </li>
-	<li>Description: {{task.description}}</li>
-	<li>Completed: {{task.completed}} </li>
+	<li>Task: {{main_task.name}} </li>
+	<li>Description: {{main_task.description}}</li>
+	<li>Completed: {{main_task.completed}} </li>
+	
+	{% if child_tasks %}
+	<h3>This Task requires the completion of the following tasks to be marked as "complete":</h3>
+	    <ul>
+	    	{% for task in child_tasks %}
+				<li>
+	        		<ul>
+						<li>Name: <a href="/task/{{ task.id }}/">{{ task.name }}</a></li>
+						<li>Description: {{ task.description}}</li>
+						<li>Completed: {{task.completed}}</li>
+					</ul>
+				</li>
+	    	{% endfor %}
+	    </ul>
+	{% else %}
+	    <p>This Task has no dependencies.</p>
+	{% endif %}
 </ul>
  
