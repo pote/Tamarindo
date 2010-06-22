@@ -8,6 +8,21 @@
 	<li>Description: {{main_task.description}}</li>
 	<li>Completed: {{main_task.completed}} </li>
 	
+	{% if main_task.parent %}
+	<h3>Parent Task:</h3>
+    	<ul>
+			<li>
+        		<ul>
+					<li>Parent Name: <a href="/task/{{ main_task.parent.id }}/">{{ main_task.parent.name }}</a></li>
+					<li>Description: {{ main_task.parent.description}}</li>
+					<li>Completed: {{main_task.parent.completed}}</li>
+				</ul>
+			</li>
+    	</ul>
+	{% else %}
+		<h3>This Task has no Parent Tasks</h3>
+	{% endif %}
+	
 	{% if child_tasks %}
 	<h3>This Task requires the completion of the following tasks to be marked as "complete":</h3>
 	    <ul>
@@ -22,7 +37,7 @@
 	    	{% endfor %}
 	    </ul>
 	{% else %}
-	    <p>This Task has no dependencies.</p>
+	    <h3>This Task has no dependencies.</h3>
 	{% endif %}
 </ul>
  
