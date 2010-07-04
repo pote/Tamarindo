@@ -1,0 +1,21 @@
+<h1>Complete Task List</h1>
+
+<a href="/admin/task/task/add/"> Create a New Task </a>
+
+{% if task_list %}
+    <ul>
+    {% for task in task_list %}
+	<li>
+        <ul>
+			<li>Name: <a href="/task/{{ task.id }}/">{{ task.name }}</a></li>
+			<li>Description: {{ task.description}}</li>
+			{% if task.deadline %} 
+				<li>Deadline: {{ task.deadline }}</li> 
+			{% endif %}
+		</ul>
+	</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks created.</p>
+{% endif %}
