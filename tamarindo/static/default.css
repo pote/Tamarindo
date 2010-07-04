@@ -7,7 +7,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin-top: 20px;
 	padding: 0;
-	background: url(static/img01.gif) repeat-x left top;
+	background: url(img01.gif) repeat-x left top;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #6D6D6D;
@@ -101,7 +101,7 @@ input, textarea, select {
 #logo {
 	float: left;
 	height: 90px;
-	background: url(static/img03.gif) no-repeat left top;
+	background: url(img03.gif) no-repeat left top;
 }
 
 #logo h1 {
@@ -155,7 +155,7 @@ input, textarea, select {
 	display: block;
 	float: left;
 	margin-left: 5px;
-	background: url(static/img02.gif) repeat-x left top;
+	background: url(img02.gif) repeat-x left top;
 	padding: 1px 10px;
 	text-decoration: none;
 	font-size: 12px;
@@ -174,7 +174,7 @@ input, textarea, select {
 #page {
 	width: 900px;
 	margin: 0 auto;
-	background: url(static/img07.jpg) no-repeat left top;
+	background: url(img07.jpg) no-repeat left top;
 }
 
 /* Content */
@@ -196,7 +196,7 @@ input, textarea, select {
 	padding-bottom: 5px;
 	padding-left: 60px;
 	border-bottom: 1px dashed #D1D1D1;
-	background: url(static/img04.gif) no-repeat left top;
+	background: url(img04.gif) no-repeat left top;
 	color: #8BCB2F;
 }
 
@@ -380,7 +380,7 @@ input, textarea, select {
 
 #footer {
 	width: 900px;
-	background: url(static/img07.jpg) no-repeat left top;
+	background: url(img07.jpg) no-repeat left top;
 	margin: 0 auto;
 	padding: 10px 0 0 60px;
 	color: #353535;
