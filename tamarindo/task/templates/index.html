@@ -30,26 +30,48 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	</div>
 	<div id="menu">
 		<ul>
-			<li class="active"><a href="#">homepage</a></li>
-			<li><a href="#">photo gallery</a></li>
-			<li><a href="#">about us</a></li>
-			<li><a href="#">links</a></li>
-			<li><a href="#">contact us</a></li>
+			<li class="active"><a href="/task/">home</a></li>
+			<li><a href="#">profile</a></li>
+			<li><a href="/task/archive">task archive</a></li>
+			<li><a href="#">logout</a></li>
 		</ul>
 	</div>
 </div>
 <!-- end header -->
-
 <!-- start page -->
 <div id="page">
 	<!-- start content -->
 	<div id="content">
 		<div class="post">
-			<h2 class="title">All Pending Tasks shown below! </h2>
-			<div class="entry">
-				#Here goes random stuf ----------------------------------
-			</div>
+			<h2 class="title">Main Menu</h2>
 		</div>
+		{% if task_list %}
+		<br/>
+		<br/>
+		<h1>Open Tasks</h1>
+		<br/>
+		<br/>
+		    <ul>
+		    {% for task in task_list %}
+		<div class="post">
+			<h2 class="title">{{task.name}}</h2>
+			<div class="entry">
+			<li>
+		        <ul>
+					<li>Name: <a href="/task/{{ task.id }}/">{{ task.name }}</a></li>
+					<li>Description: {{ task.description}}</li>
+					{% if task.deadline %} 
+						<li>Deadline: {{ task.deadline }}</li> 
+					{% endif %}
+				</ul>
+			</li>
+			</div>
+			</div>
+		    {% endfor %}
+		    </ul>
+		{% else %}
+		    <p>No tasks created.</p>
+		{% endif %}
 	</div>
 	<!-- end content -->
 	<!-- start sidebar -->
@@ -65,11 +87,10 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 				</form>
 			</li>
 			<li>
-				<h2><strong>Lorem</strong> Ipsum</h2>
+				<h2><strong>Basic</strong> Actions</h2>
 				<ul>
-					<li><a href="#">Fusce dui neque fringilla</a></li>
-					<li><a href="#">Eget tempor eget nonummy</a></li>
-					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="/admin/task/task/add/">Create new Task</a></li>
+					<li><a href="#">View Pending Tasks</a></li>
 				</ul>
 			</li>
 			<li>

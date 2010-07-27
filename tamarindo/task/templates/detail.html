@@ -1,4 +1,50 @@
-<h1>{{ main_task.name }}</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Excess
+Version    : 1.0
+Released   : 20090210
+Description: A two-column, fixed-width and lightweight template ideal for 1024x768 resolutions. Suitable for blogs and small websites.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tamarindo - Pretty slogan goes here</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--<link href="default.css" rel="stylesheet" type="text/css" />-->
+<link rel=Stylesheet href="/static/default.css" type="text/css">
+
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><a href="#">Tamarindo<sup></sup></a></h1>
+		<h2>pretty slogan goes here</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="/task/">home</a></li>
+			<li><a href="#">profile</a></li>
+			<li><a href="/task/archive">task archive</a></li>
+			<li><a href="#">logout</a></li>
+		</ul>
+	</div>
+</div>
+<!-- end header -->
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+			<h2 class="title">{{ main_task.name }}</h2>
+
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -46,4 +92,68 @@
 	    <h3>This Task has no dependencies.</h3>
 	{% endif %}
 </ul>
- 
+
+</div>
+</div>
+
+
+
+	<!-- end content -->
+		<!-- start sidebar -->
+		<div id="sidebar">
+			<ul>
+				<li id="search">
+					<h2><b class="text1">Search</b></h2>
+					<form method="get" action="">
+						<fieldset>
+						<input type="text" id="s" name="s" value="" />
+						<input type="submit" id="x" value="Search" />
+						</fieldset>
+					</form>
+				</li>
+				<li>
+					<h2><strong>Basic</strong> Actions</h2>
+					<ul>
+						<li><a href="/admin/task/task/add/">Create new Task</a></li>
+						<li><a href="#">View Pending Tasks</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2><b>Volutpat</b> Dolore</h2>
+					<ul>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2><b>Volutpat</b> Dolore</h2>
+					<ul>
+						<li><a href="#">Nec metus sed donec</a></li>
+						<li><a href="#">Magna lacus bibendum mauris</a></li>
+						<li><a href="#">Velit semper nisi molestie</a></li>
+						<li><a href="#">Eget tempor eget nonummy</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end page -->
+	<!-- start footer -->
+	<div id="footer">
+		<div id="footer-menu">
+			<ul>
+				<li class="active"><a href="#">homepage</a></li>
+				<li><a href="#">photo gallery</a></li>
+				<li><a href="#">about us</a></li>
+				<li><a href="#">links</a></li>
+				<li><a href="#">contact us</a></li>
+			</ul>
+		</div>
+		<p id="legal">(c) 2010 Tamarindo. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+	</div>
+	<!-- end footer -->
+	</body>
+	</html>

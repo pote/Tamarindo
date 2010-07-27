@@ -5,4 +5,5 @@ admin.autodiscover()
 urlpatterns = patterns('tamarindo.task.views',
     (r'^$', 'index'),
     (r'^(?P<task_id>\d+)/$', 'detail'),
+    (r'archive/$', 'archive'),
 )
